@@ -13,6 +13,24 @@ class QuestionnaireRequest {
       }
     });
   }
+
+
+  static deleteQuestionnaire(qid, token) {
+    return request({
+      method: 'post',
+      url: 'questionnaires/delete',
+      headers: {
+        showLoading: true,
+        showLoadingType: 0,
+      },
+      data: {
+        "questionnaireId": qid
+      },
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
 }
 
 export {

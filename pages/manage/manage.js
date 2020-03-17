@@ -1,4 +1,7 @@
 import {QuestionnaireRequest} from "../../network/questionnaire";
+import {MessageBox} from "../../utils/messageBox";
+import {ResponseModel} from "../../models/ResponseModel";
+
 
 const app = getApp();
 
@@ -26,19 +29,34 @@ Page({
     ]
 
   },
-  onLoad: function () {
-    app.userInfoReadyCallback = token => {
-      QuestionnaireRequest.getUserQuestionnaireInfo(token)
-        .then(res => {
-          this.setData({
-            questionnaires: res.data.questionnaires
-          });
-        })
+  onShow() {
+    if (!app.globalData.isLogin) {
+      app.userInfoReadyCallback = token => {
+        this.getUserQuestionnaireInfo(token);
+        app.globalData.isLogin = !app.globalData.isLogin;
+      };
+    } else {
+      this.getUserQuestionnaireInfo(app.globalData.token);
     }
   },
+
+  getUserQuestionnaireInfo(token) {
+    QuestionnaireRequest.getUserQuestionnaireInfo(token)
+      .then(res => {
+        this.setData({
+          questionnaires: res.data.questionnaires
+        });
+      })
+  },
+
+  menuButtonClick() {
+    wx.reLaunch({
+      url: '/pages/manage/manage'
+    });
+  },
+
   // 某个问卷标签被单击 弹出操作框
   itemClick(event) {
-    console.log(event.currentTarget.dataset.qid);
     let targetIndex = event.currentTarget.dataset.index;
     this.setData({
       actionSheetVisible: true,
@@ -66,6 +84,9 @@ Page({
         this.gotoDelete();
         break;
     }
+    this.setData({
+      actionSheetVisible: false,
+    });
   },
 
 
@@ -97,6 +118,23 @@ Page({
 
   // 删除
   gotoDelete() {
-    console.log('sc');
+    let qid = this.data.activeQuestionnaire.questionnaireId;
+    let token = app.globalData.token;
+    QuestionnaireRequest.deleteQuestionnaire(qid, token)
+      .then(res => {
+        let response = new ResponseModel(res.data);
+        MessageBox.handleSuccess({
+          message: response.information
+        });
+        wx.reLaunch({
+          url: '/pages/manage/manage'
+        });
+      })
+      .catch(res => {
+        let response = new ResponseModel(res.data);
+        MessageBox.handleSuccess({
+          message: response.information
+        });
+      });
   },
 });

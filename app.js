@@ -6,7 +6,8 @@ const TOKEN = 'token';
 App({
   globalData: {
     userInfo: null,
-    token: ''
+    token: '',
+    isLogin: false
   },
   onLaunch: function () {
     const token = wx.getStorageSync(TOKEN);

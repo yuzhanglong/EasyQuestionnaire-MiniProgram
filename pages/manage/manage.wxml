@@ -1,9 +1,13 @@
 <view>
+    <i-message id="message"></i-message>
 
     <view id="manage">
         <top-bar>
             <view slot="top-bar-left">
-                <button class="menu-icon-button" size="mini" hover-class="menu-icon-button-hover">
+                <button class="menu-icon-button"
+                        size="mini"
+                        hover-class="menu-icon-button-hover"
+                        bind:tap="menuButtonClick">
                     <view class="menu-icon-wrap">
                         <i-icon type="other" size="32" color="#80848f"></i-icon>
                     </view>
