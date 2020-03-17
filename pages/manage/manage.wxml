@@ -33,4 +33,6 @@
         </view>
     </i-action-sheet>
 
+
+    <better-tab-bar current="manage"></better-tab-bar>
 </view>

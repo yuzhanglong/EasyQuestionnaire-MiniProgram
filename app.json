@@ -8,30 +8,9 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/manage/manage",
-        "text": "管理",
-        "iconPath": "assets/tabBar/home.png",
-        "selectedIconPath": "assets/tabBar/home_active.png"
-      },
-      {
-        "pagePath": "pages/questionnaire/questionnaire",
-        "text": "创建",
-        "iconPath": "assets/tabBar/questionnaire.png",
-        "selectedIconPath": "assets/tabBar/questionnaire.png"
-      },
-      {
-        "pagePath": "pages/profile/profile",
-        "text": "更多",
-        "iconPath": "assets/tabBar/profile.png",
-        "selectedIconPath": "assets/tabBar/profile_active.png"
-      }
-    ]
-  }
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,0 +1,21 @@
+<view>
+    <i-tab-bar current="{{ current }}"
+               bindchange="handleChange"
+               fixed>
+        <i-tab-bar-item key="manage"
+                        icon="homepage"
+                        current-icon="homepage_fill"
+                        title="问卷管理">
+        </i-tab-bar-item>
+        <i-tab-bar-item key="questionnaire"
+                        icon="add"
+                        current-icon="add"
+                        title="创建问卷">
+        </i-tab-bar-item>
+        <i-tab-bar-item key="profile"
+                        icon="mine"
+                        current-icon="mine_fill"
+                        title="个人中心">
+        </i-tab-bar-item>
+    </i-tab-bar>
+</view>

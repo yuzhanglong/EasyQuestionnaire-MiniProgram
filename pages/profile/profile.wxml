@@ -1,2 +1,1 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
+<better-tab-bar current="profile"></better-tab-bar>
