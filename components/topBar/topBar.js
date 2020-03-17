@@ -1,5 +1,8 @@
 Component({
   properties: {},
   data: {},
-  methods: {}
+  methods: {},
+  options: {
+    multipleSlots: true
+  }
 });

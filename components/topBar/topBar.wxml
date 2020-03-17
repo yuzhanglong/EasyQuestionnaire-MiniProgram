@@ -1,0 +1,13 @@
+<view>
+    <view class="top-bar">
+        <view class="top-bar-left">
+            <slot name="top-bar-left"></slot>
+        </view>
+        <view class="top-bar-mid">
+            <slot name="top-bar-mid"></slot>
+        </view>
+        <view class="top-bar-right">
+            <slot name="top-bar-right"></slot>
+        </view>
+    </view>
+</view>

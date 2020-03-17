@@ -1,0 +1,29 @@
+.item-card {
+    margin-top: 45rpx;
+    height: 100rpx;
+    width: 90vw;
+    background-color: white;
+    display: flex;
+}
+
+.item-card-condition-mark-tag {
+    white-space: nowrap;
+}
+
+.item-card-condition-mark {
+    padding-left: 20rpx;
+    padding-top: 25rpx;
+    width: 30rpx;
+}
+
+.item-card-title {
+    padding-left: 80rpx;
+    flex: 1;
+    font-size: 26rpx;
+    line-height: 100rpx;
+}
+
+.item-card-tail {
+    padding-top: 25rpx;
+    width: 120rpx;
+}

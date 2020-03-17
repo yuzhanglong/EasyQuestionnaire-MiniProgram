@@ -1,0 +1,18 @@
+.top-bar{
+    display: flex;
+    background-color: white;
+    height: 100rpx;
+}
+
+
+.top-bar-left{
+    width: 100rpx;
+}
+
+.top-bar-mid{
+    flex: 1;
+}
+
+.top-bar-right{
+    width: 120rpx;
+}

@@ -1,0 +1,36 @@
+<view>
+
+    <view id="manage">
+        <top-bar>
+            <view slot="top-bar-left">
+                <button class="menu-icon-button" size="mini" hover-class="menu-icon-button-hover">
+                    <view class="menu-icon-wrap">
+                        <i-icon type="other" size="32" color="#80848f"></i-icon>
+                    </view>
+                </button>
+            </view>
+        </top-bar>
+
+        <view id="item-card-wrap">
+            <view wx:for="{{questionnaires}}"
+                  wx:key="questionnaireId"
+                  bind:tap="itemClick"
+                  data-qid="{{item.questionnaireId}}"
+                  data-index="{{index}}">
+                <item-card title="{{item.title}}" condition="{{item.condition}}"></item-card>
+            </view>
+        </view>
+    </view>
+
+    <i-action-sheet visible="{{actionSheetVisible}}"
+                    actions="{{questionnaireOperation}}"
+                    show-cancel
+                    bind:click="handleClickItem"
+                    bind:cancel="actionSheetCancel" class="action-sheet-in-manage">
+        <view slot="header" style="padding: 16px">
+            <view style="color: #444;font-size: 16px"></view>
+            <text>{{activeQuestionnaire.title}}</text>
+        </view>
+    </i-action-sheet>
+
+</view>

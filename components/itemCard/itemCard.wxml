@@ -1,0 +1,13 @@
+<view>
+    <view class="item-card">
+        <view class="item-card-condition-mark">
+            <i-tag class="item-card-condition-mark-tag" color="{{condition ? 'green' : 'default'}}">
+                {{condition ? '发布中' : '未发布'}}
+            </i-tag>
+        </view>
+        <view class="item-card-title">
+            {{title}}
+        </view>
+        <view class="item-card-tail"></view>
+    </view>
+</view>
