@@ -1,34 +1,53 @@
 //app.js
+import {UserRequest} from "./network/user";
+
+const TOKEN = 'token';
+
 App({
+  globalData: {
+    userInfo: null,
+    token: ''
+  },
   onLaunch: function () {
+    const token = wx.getStorageSync(TOKEN);
+    if (token) {
+      this.checkToken(token);
+    } else {
+      this.weChatLogin();
+    }
+  },
+
+  checkToken(token) {
+    UserRequest.checkToken(token)
+      .then(() => {
+        this.globalData.token = token;
+        if (this.userInfoReadyCallback) {
+          this.userInfoReadyCallback(token);
+        }
+      })
+      .catch(() => {
+        // 重新登录
+        this.weChatLogin();
+      })
+  },
+
+  weChatLogin() {
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res);
-              }
+        UserRequest.userLogin('testNickName', res.code)
+          .then(res => {
+            this.globalData.token = res.data.token;
+            wx.setStorageSync(TOKEN, this.globalData.token);
+            if (this.userInfoReadyCallback) {
+              this.userInfoReadyCallback(res.data.token);
             }
-          })
-        }
+          }).catch(err => {
+          //TODO:网络错误处理
+          console.log(err);
+        });
       }
-    })
-  },
-  globalData: {
-    userInfo: null
+    });
   }
-})
+});
