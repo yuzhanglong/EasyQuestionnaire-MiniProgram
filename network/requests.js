@@ -6,7 +6,13 @@ export default function request(option) {
       url: BASE_URL + '/' + option.url,
       method: option.method || 'get',
       data: option.data || {},
-      success: resolve,
+      success: result => {
+        if (result.statusCode < 300) {
+          resolve(result);
+        } else {
+          reject(result);
+        }
+      },
       fail: reject,
       header: option.header || {},
     });

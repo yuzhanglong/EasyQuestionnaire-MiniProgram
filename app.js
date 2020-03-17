@@ -20,7 +20,7 @@ App({
 
   checkToken(token) {
     UserRequest.checkToken(token)
-      .then(() => {
+      .then(res => {
         this.globalData.token = token;
         if (this.userInfoReadyCallback) {
           this.userInfoReadyCallback(token);
