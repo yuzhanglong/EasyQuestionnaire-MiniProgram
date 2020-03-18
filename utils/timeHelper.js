@@ -6,8 +6,7 @@ class TimeHelper {
 
   static GMTtoTime(time) {
     let date = new Date(time);
-    console.log(`${date.getHours()}:${date.getMinutes() + 1}:${date.getSeconds()}`);
-    return `${date.getHours()}:${date.getMinutes() + 1}:${date.getSeconds()}`
+    return `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
   }
 }
 

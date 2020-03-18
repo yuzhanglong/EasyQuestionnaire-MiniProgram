@@ -42,6 +42,17 @@ class QuestionnaireRequest {
     })
   }
 
+  static editQuesitonnaire(data, token) {
+    return request({
+      method: 'post',
+      url: 'questionnaires/edit',
+      data: data,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
 
 }
 

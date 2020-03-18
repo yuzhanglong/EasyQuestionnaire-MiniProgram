@@ -2,7 +2,8 @@
   "pages": [
     "pages/manage/manage",
     "pages/questionnaire/questionnaire",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/basicEdition/basicEdition"
   ],
   "window": {
     "backgroundTextStyle": "light",

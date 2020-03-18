@@ -25,7 +25,6 @@ Page({
         });
       })
       .catch(err => {
-        console.log(err);
         let response = new ResponseModel(err.data);
         MessageBox.handleError({
           message: response.information
@@ -49,18 +48,35 @@ Page({
     })
   },
   bindTimeChange(event) {
-    let target = 'questionnaireCondition.deadline[1]';
+    let target = 'questionnaireCondition.deadlineTime';
     this.setData({
       [target]: event.detail.value + ':00'
     });
   },
 
   bindDateChange(event) {
-    let target = 'questionnaireCondition.deadline[0]';
+    let target = 'questionnaireCondition.deadlineDate';
     this.setData({
       [target]: event.detail.value
     });
+  },
+
+  subMitData() {
+    this.data.questionnaireCondition.deadlineArrayToGMTString();
+    let c = new QuestionnaireCondition(this.data.questionnaireCondition);
+    c.deadlineArrayToGMTString();
+    c.deleteUselessData();
+    QuestionnaireRequest.editQuesitonnaire(c, app.globalData.token)
+      .then(() => {
+        MessageBox.handleSuccess({
+          message: "问卷编辑成功~"
+        });
+      })
+      .catch(err => {
+        let response = new ResponseModel(err.data);
+        MessageBox.handleError({
+          message: response.information
+        })
+      })
   }
-
-
 });
