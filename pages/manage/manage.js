@@ -10,6 +10,7 @@ Page({
     questionnaires: [],
     activeQuestionnaire: {},
     actionSheetVisible: false,
+    confirmSpreadVisiable: false,
     questionnaireOperation: [
       {
         name: '发布'
@@ -98,7 +99,9 @@ Page({
 
   // 发布问卷
   gotoSpread() {
-    console.log('fabu');
+    this.setData({
+      confirmSpreadVisiable: true
+    });
   },
 
   // 编辑基本信息
@@ -139,4 +142,14 @@ Page({
         });
       });
   },
+
+
+  // 发布确认
+  confirmSpread() {
+    console.log("ok");
+  },
+
+  cancalSpread() {
+    console.log("no");
+  }
 });

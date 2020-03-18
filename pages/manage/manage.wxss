@@ -3,13 +3,13 @@ page {
 }
 
 .menu-icon-wrap {
-    padding-top: 14rpx;
+
 }
 
 .menu-icon-button {
-    height: 100rpx;
-    width: 100rpx;
     background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .menu-icon-button-hover {
