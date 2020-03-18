@@ -6,8 +6,10 @@ page {
 
 }
 
+
+
 .menu-icon-button {
-    background-color: transparent;
+    color: white;
     margin: 0;
     padding: 0;
 }

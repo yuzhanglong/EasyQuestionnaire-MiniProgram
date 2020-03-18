@@ -1,0 +1,11 @@
+<view class="basic-info">
+    <view class="basic-info-wrap">
+        <view class="title-group">
+            <view class="basic-info-title">{{title}}</view>
+            <view class="basic-info-subtitle">{{subTitle}}</view>
+        </view>
+        <view class="edit-button-wrap">
+            <text>编辑</text>
+        </view>
+    </view>
+</view>

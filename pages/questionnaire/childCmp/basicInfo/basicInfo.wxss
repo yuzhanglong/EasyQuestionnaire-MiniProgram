@@ -1,0 +1,34 @@
+.basic-info {
+    background-color: white;
+    /* 和上方文字对齐*/
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+
+}
+
+.basic-info-wrap {
+    padding: 24rpx;
+    display: flex;
+}
+
+.basic-info-title {
+    font-size: 32rpx;
+}
+
+.basic-info-subtitle {
+    padding-top: 22rpx;
+    font-size: 23rpx;
+    color: #86878B;
+}
+
+.title-group {
+    width: 77vw;
+}
+
+.edit-button-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #368DFF;
+}

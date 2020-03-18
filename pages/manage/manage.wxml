@@ -13,7 +13,7 @@
                 <i-button bind:click="menuButtonClick"
                           inline
                           size="large"
-                          long>
+                          long class="menu-icon-button">
                     <i-icon type="other" size="32" color="#80848f"></i-icon>
                 </i-button>
             </view>

@@ -173,5 +173,10 @@ Page({
     this.setData({
       confirmSpreadVisiable: false
     });
+  },
+  menuButtonClick() {
+    wx.navigateTo({
+      url: "/pages/questionnaire/questionnaire?type=new"
+    })
   }
 });

@@ -1,0 +1,28 @@
+page {
+    background-color: #F5F6FA
+}
+
+.questionnaire-title {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    color: #86878B;
+    font-size: 25rpx;
+}
+
+.basic-info-container {
+    padding-top: 30rpx;
+}
+
+.problems-container {
+    padding-top: 30rpx;
+}
+
+.add-problem-message {
+    text-align: center;
+}
+
+.add-problem-message-text {
+    padding-left: 10rpx;
+    font-size: 22rpx;
+    color: #368DFF;
+}

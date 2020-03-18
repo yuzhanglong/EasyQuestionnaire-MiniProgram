@@ -1,0 +1,32 @@
+.problem-card {
+    background-color: white;
+    /* 和上方文字对齐*/
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+.problem-card-items {
+    display: flex;
+    padding: 25rpx;
+}
+
+
+/*左侧删除按钮*/
+
+.problem-card-head {
+    width: 10vw;
+}
+
+/*右侧编辑按钮*/
+
+.problem-card-detailed {
+    width: 8vw;
+}
+
+/*问题标题*/
+
+.problem-card-title {
+    flex: 1;
+}
+
+

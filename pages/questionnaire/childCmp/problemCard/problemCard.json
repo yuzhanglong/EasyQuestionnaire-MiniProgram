@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-icon": "/components/iViewUi/icon/index"
+  }
+}

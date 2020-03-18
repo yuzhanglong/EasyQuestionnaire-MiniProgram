@@ -1,0 +1,21 @@
+<view class="problem-card">
+    <view class="problem-card-items">
+        <view class="problem-card-head">
+            <i-icon type="close" color="red" size="20" wx-if="{{!onlyShowTitle}}">
+            </i-icon>
+        </view>
+
+        <view class="problem-card-title">
+            {{problemTitle}}
+            <slot></slot>
+        </view>
+
+        <view class="problem-card-detailed">
+            <i-icon type="brush" size="20" wx-if="{{!onlyShowTitle}}">
+            </i-icon>
+        </view>
+
+
+    </view>
+
+</view>

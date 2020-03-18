@@ -61,6 +61,14 @@
 					"id": -1,
 					"name": "pages/profile/profile",
 					"pathName": "pages/profile/profile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/questionnaire/questionnaire",
+					"pathName": "pages/questionnaire/questionnaire",
+					"query": "qid=new",
 					"scene": null
 				}
 			]

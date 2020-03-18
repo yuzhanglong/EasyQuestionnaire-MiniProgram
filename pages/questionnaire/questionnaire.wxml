@@ -1,0 +1,19 @@
+<view id="questionnnaire">
+    <view class="questionnaire-title">标题与描述</view>
+    <view class="basic-info-container">
+        <basic-info title="{{basicInfo.title}}"
+                    subTitle="{{basicInfo.subTitle}}">
+        </basic-info>
+    </view>
+    <view class="questionnaire-title">问题</view>
+    <view class="problems-container">
+        <problem-card onlyShowTitle>
+            <view class="add-problem-message">
+                <i-icon type="add" size="15" color="#368DFF"></i-icon>
+                <text class="add-problem-message-text">添加一个问题</text>
+            </view>
+        </problem-card>
+    </view>
+
+
+</view>
