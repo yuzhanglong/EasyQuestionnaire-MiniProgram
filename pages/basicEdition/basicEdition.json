@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-message": "/components/iViewUi/message/index",
+    "i-cell-group": "/components/iViewUi/cell-group/index",
+    "i-cell": "/components/iViewUi/cell/index",
+    "i-input": "/components/iViewUi/input/index",
+    "i-button": "/components/iViewUi/button/index",
+    "i-card": "/components/iViewUi/card/index",
+    "i-tag": "/components/iViewUi/tag/index"
+  }
+}

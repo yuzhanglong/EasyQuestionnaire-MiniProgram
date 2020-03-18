@@ -5,7 +5,7 @@ Component({
   methods: {
     handleChange(event) {
       let key = event.detail.key;
-      wx.reLaunch({
+      wx.navigateTo({
         url: `/pages/${key}/${key}`
       });
     }

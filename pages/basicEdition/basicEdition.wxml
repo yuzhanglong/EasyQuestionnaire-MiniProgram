@@ -1,0 +1,91 @@
+<view>
+    <i-message id="message"></i-message>
+
+    <i-card title="标题: {{questionnaireCondition.title}}"
+            full>
+        <view slot="extra-tag">
+            <i-tag
+                    class="i-tags"
+                    name="top-tag"
+                    type="border"
+                    color="{{questionnaireCondition.condition ? 'green' : 'red'}}">
+                {{questionnaireCondition.condition ? '发布中' : '未发布'}}
+            </i-tag>
+        </view>
+        <view slot="content">副标题: {{questionnaireCondition.subTitle}}</view>
+        <view slot="footer"></view>
+    </i-card>
+
+    <i-cell-group>
+        <i-cell title="发布状态">
+            <switch slot="footer"
+                    checked="{{questionnaireCondition.condition}}"
+                    bind:change="switchChange" data-type="condition"/>
+        </i-cell>
+
+        <i-cell title="开启设备限制">
+            <switch slot="footer"
+                    checked="{{questionnaireCondition.equipmentControl}}"
+                    bind:change="switchChange" data-type="equipmentControl"/>
+        </i-cell>
+
+        <i-cell title="开启ip限制">
+            <switch slot="footer"
+                    checked="{{questionnaireCondition.ipControl}}"
+                    bind:change="switchChange" data-type="ipControl"/>
+        </i-cell>
+
+        <i-cell title="开启问卷密码限制">
+            <switch slot="footer"
+                    checked="{{questionnaireCondition.isSecret}}"
+                    bind:change="switchChange"
+                    data-type="isSecret"/>
+        </i-cell>
+
+        <!-- 密码输入框 -->
+        <view wx:if="{{questionnaireCondition.isSecret}}" class="secret-input">
+            <i-cell>
+                <i-input value="{{ questionnaireCondition.secretKey }}"
+                         title="当前密码"
+                         placeholder="请输入你要设置的密码"
+                         bind:change="secretInputChange"/>
+            </i-cell>
+        </view>
+
+        <i-cell title="开启填报时间限制">
+            <switch slot="footer"
+                    checked="{{questionnaireCondition.deadlineControl}}"
+                    bind:change="switchChange"
+                    data-type="deadlineControl"/>
+        </i-cell>
+
+        <view wx:if="{{questionnaireCondition.deadlineControl}}" class="day-and-time-picker">
+            <i-cell>
+                <!-- picker里面必须有内容 否则就会失效-->
+                <picker mode="date" value="{{questionnaireCondition.deadline[0]}}"
+                        start="2020-01-01" end="2023-09-01"
+                        bindchange="bindDateChange">
+                    <view class="picker">
+                        点击我选择日期
+                    </view>
+                </picker>
+            </i-cell>
+
+            <i-cell>
+                <picker mode="time" value="{{questionnaireCondition.deadline[1]}}"
+                        start="09:01" end="21:01"
+                        bindchange="bindTimeChange">
+                    <view class="picker">
+                        点击我选择时间
+                    </view>
+                </picker>
+            </i-cell>
+        </view>
+
+    </i-cell-group>
+    <i-button type="success"
+              shape="circle">
+        保存上述设置
+    </i-button>
+
+</view>

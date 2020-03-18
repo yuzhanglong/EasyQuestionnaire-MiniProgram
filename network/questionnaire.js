@@ -31,6 +31,18 @@ class QuestionnaireRequest {
       }
     })
   }
+
+  static getQuesionnaireCondition(qid, token) {
+    return request({
+      method: 'get',
+      url: 'questionnaires/get_condition/' + qid,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
+
 }
 
 export {

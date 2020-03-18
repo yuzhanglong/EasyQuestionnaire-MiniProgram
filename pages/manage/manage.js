@@ -103,7 +103,9 @@ Page({
 
   // 编辑基本信息
   gotoEditBasicInfo() {
-    console.log('bianjibasic');
+    wx.navigateTo({
+      url: `/pages/basicEdition/basicEdition?qid=${this.data.activeQuestionnaire.questionnaireId}`
+    })
   },
 
   // 问卷题目编辑
