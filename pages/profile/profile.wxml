@@ -1,1 +1,16 @@
-<better-tab-bar current="profile"></better-tab-bar>
+<view id="profile">
+    <view id="userInfo">
+        <image bindtap="bindViewTap"
+               class="userinfo-avatar"
+               src="{{userInfo.avatarUrl}}"
+               mode="cover">
+        </image>
+        <text id="userInfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+
+    <better-tab-bar current="profile"></better-tab-bar>
+</view>
+
+
+
+
