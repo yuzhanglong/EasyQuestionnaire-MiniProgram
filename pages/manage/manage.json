@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "item-card": "/components/itemCard/itemCard",
+    "item-card": "/pages/manage/childCmp/itemCard/itemCard",
     "top-bar": "/components/topBar/topBar",
     "i-icon": "/components/iViewUi/icon/index",
     "i-action-sheet": "/components/iViewUi/action-sheet/index",

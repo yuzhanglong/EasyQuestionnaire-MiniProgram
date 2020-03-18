@@ -4,7 +4,7 @@
     <i-modal visible="{{ confirmSpreadVisiable }}"
              bind:ok="confirmSpread"
              bind:cancel="cancalSpread">
-        <view>是否确定发布?</view>
+        <view>是否{{activeQuestionnaire.condition ? "取消": ""}}发布?</view>
     </i-modal>
 
     <view id="manage">

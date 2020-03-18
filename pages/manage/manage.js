@@ -50,7 +50,7 @@ Page({
       })
   },
 
-  menuButtonClick() {
+  reLaunchManagePage() {
     wx.reLaunch({
       url: '/pages/manage/manage'
     });
@@ -59,9 +59,12 @@ Page({
   // 某个问卷标签被单击 弹出操作框
   itemClick(event) {
     let targetIndex = event.currentTarget.dataset.index;
+    let operation = 'questionnaireOperation[0].name';
+    let newq = this.data.questionnaires[targetIndex];
     this.setData({
       actionSheetVisible: true,
-      activeQuestionnaire: this.data.questionnaires[targetIndex]
+      activeQuestionnaire: newq,
+      [operation]: newq.condition ? "取消发布" : "发布"
     });
   },
 
@@ -131,9 +134,7 @@ Page({
         MessageBox.handleSuccess({
           message: response.information
         });
-        wx.reLaunch({
-          url: '/pages/manage/manage'
-        });
+        this.reLaunchManagePage();
       })
       .catch(res => {
         let response = new ResponseModel(res.data);
@@ -146,10 +147,31 @@ Page({
 
   // 发布确认
   confirmSpread() {
-    console.log("ok");
+    let data = {
+      "questionnaireId": this.data.activeQuestionnaire.questionnaireId,
+      "condition": !this.data.activeQuestionnaire.condition
+    };
+    QuestionnaireRequest.editQuesitonnaire(data, app.globalData.token)
+      .then(() => {
+        MessageBox.handleSuccess({
+          message: "问卷发布成功~"
+        });
+        this.reLaunchManagePage();
+      })
+      .catch(res => {
+        let response = new ResponseModel(res.data);
+        MessageBox.handleSuccess({
+          message: response.information
+        });
+      });
+    this.setData({
+      confirmSpreadVisiable: false
+    });
   },
 
   cancalSpread() {
-    console.log("no");
+    this.setData({
+      confirmSpreadVisiable: false
+    });
   }
 });
