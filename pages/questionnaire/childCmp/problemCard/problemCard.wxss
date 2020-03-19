@@ -14,12 +14,13 @@
 /*左侧删除按钮*/
 
 .problem-card-head {
-    width: 10vw;
+    width: 13vw;
 }
 
 /*右侧编辑按钮*/
 
 .problem-card-detailed {
+    padding-left: 4rpx;
     width: 8vw;
 }
 

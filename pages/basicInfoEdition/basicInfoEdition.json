@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "i-input": "/components/iViewUi/input/index",
+    "i-button": "/components/iViewUi/button/index",
+    "i-message": "/components/iViewUi/message/index"
+  }
+}

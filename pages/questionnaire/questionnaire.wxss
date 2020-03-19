@@ -19,10 +19,21 @@ page {
 
 .add-problem-message {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .add-problem-message-text {
-    padding-left: 10rpx;
-    font-size: 22rpx;
+    height: 50rpx;
+    font-size: 30rpx;
     color: #368DFF;
+}
+
+.problems-container-items {
+    padding-top: 4rpx;
+}
+
+.problems-container-add-problem {
+    padding-top: 4rpx;
 }

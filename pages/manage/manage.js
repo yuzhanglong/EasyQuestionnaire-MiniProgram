@@ -116,7 +116,9 @@ Page({
 
   // 问卷题目编辑
   gotoEditProblems() {
-    console.log('bianjitimu');
+    wx.navigateTo({
+      url: `/pages/questionnaire/questionnaire?qid=${this.data.activeQuestionnaire.questionnaireId}`
+    })
   },
 
   // 数据分析

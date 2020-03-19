@@ -5,7 +5,7 @@
             <view class="basic-info-subtitle">{{subTitle}}</view>
         </view>
         <view class="edit-button-wrap">
-            <text>编辑</text>
+            <text bind:tap="gotoEditQuestionnaireBasicInfo">编辑</text>
         </view>
     </view>
 </view>

@@ -1,0 +1,28 @@
+page {
+    background-color: #F5F6FA
+}
+
+
+.basic-info-edition-title {
+    padding-left: 30rpx;
+    padding-top: 40rpx;
+    color: #86878B;
+    font-size: 25rpx;
+}
+
+.title-input-container {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-right: 30rpx;
+}
+
+.save-button-wrap {
+    height: 10vh;
+    padding-top: 10rpx;
+    background-color: white;
+    position: fixed;
+    text-align: center;
+    width: 100vw;
+    bottom: 0;
+
+}

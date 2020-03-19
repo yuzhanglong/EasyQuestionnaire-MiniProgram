@@ -31,7 +31,7 @@ class QuestionnaireCondition {
     this.deadline = `${this.deadlineDate} ${this.deadlineTime}`;
   }
 
-  deleteUselessData(){
+  deleteUselessData() {
     delete this.deadlineDate;
     delete this.deadlineTime;
   }

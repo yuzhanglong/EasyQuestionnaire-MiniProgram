@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-input": "/components/iViewUi/input/index",
+    "i-button": "/components/iViewUi/button/index",
+    "problem-card": "../questionnaire/childCmp/problemCard/problemCard",
+    "i-icon": "/components/iViewUi/icon/index"
+  }
+}

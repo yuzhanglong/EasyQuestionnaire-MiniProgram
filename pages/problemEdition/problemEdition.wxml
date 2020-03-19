@@ -1,0 +1,19 @@
+<view id="problem-edition">
+    <view class="questionnaire-title">
+        标题
+    </view>
+
+    <view class="problem-title-container">
+        <i-input type="textarea"
+                 value="{{title}}">
+        </i-input>
+    </view>
+
+    <view class="questionnaire-title">选项</view>
+    <view class="options-containr">
+
+
+    </view>
+
+    <view class="questionnaire-title">设置</view>
+</view>

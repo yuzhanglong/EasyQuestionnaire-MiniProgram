@@ -1,0 +1,15 @@
+function getProblemTypeChineseName(type) {
+  var problemTypeChineseNameMap = {
+    "SINGLE_SELECT": "单选题",
+    "MULTIPLY_SELECT": "多选题",
+    "BLANK_FILL": "填空题",
+    "DROP_DOWN": "下拉题",
+    "SCORE": "评价题"
+  };
+  return problemTypeChineseNameMap[type];
+
+}
+
+module.exports = {
+  getProblemTypeChineseName: getProblemTypeChineseName
+};

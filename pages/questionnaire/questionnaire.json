@@ -2,6 +2,9 @@
   "usingComponents": {
     "basic-info": "childCmp/basicInfo/basicInfo",
     "problem-card": "childCmp/problemCard/problemCard",
-    "i-icon": "/components/iViewUi/icon/index"
+    "i-icon": "/components/iViewUi/icon/index",
+    "i-action-sheet": "/components/iViewUi/action-sheet/index",
+    "i-message": "/components/iViewUi/message/index",
+    "i-tag": "/components/iViewUi/tag/index"
   }
 }

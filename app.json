@@ -3,7 +3,9 @@
     "pages/manage/manage",
     "pages/questionnaire/questionnaire",
     "pages/profile/profile",
-    "pages/basicEdition/basicEdition"
+    "pages/basicEdition/basicEdition",
+    "pages/basicInfoEdition/basicInfoEdition",
+    "pages/problemEdition/problemEdition"
   ],
   "window": {
     "backgroundTextStyle": "light",

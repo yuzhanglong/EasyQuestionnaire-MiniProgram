@@ -53,6 +53,27 @@ class QuestionnaireRequest {
     })
   }
 
+  static getQuesionnaire(qid, token) {
+    return request({
+      method: 'get',
+      url: 'questionnaires/get_questionnaire/' + qid,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
+  static appendOneProblem(problemData, token) {
+    return request({
+      method: 'post',
+      url: 'questionnaires/append_one_problem',
+      data: problemData,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
 
 }
 

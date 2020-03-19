@@ -1,8 +1,7 @@
 Component({
   properties: {
-    problemTitle: String,
-    problemId: String,
-    number: String,
+    problem: Object,
+    number: Number,
     onlyShowTitle: Boolean
   },
   data: {},

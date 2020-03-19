@@ -1,0 +1,16 @@
+page {
+    background-color: #F5F6FA
+}
+
+.questionnaire-title {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    color: #86878B;
+    font-size: 25rpx;
+}
+
+.problem-title-container {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    padding-right: 30rpx;
+}
