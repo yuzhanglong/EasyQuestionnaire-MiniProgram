@@ -1,0 +1,16 @@
+<view class="base-card">
+
+    <view class="base-card-items">
+        <view class="base-card-head" style="width:{{widthByVw || 13}}vw;">
+            <slot name="base-card-head"></slot>
+        </view>
+
+        <view class="base-card-body">
+            <slot name="base-card-body"></slot>
+        </view>
+        <view class="base-card-tail" style="width:{{tailWidthByVw || 8}}vw;">
+            <slot name="base-card-tail"></slot>
+        </view>
+    </view>
+
+</view>

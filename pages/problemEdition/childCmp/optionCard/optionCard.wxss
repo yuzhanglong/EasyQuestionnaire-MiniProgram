@@ -1,0 +1,5 @@
+.option-head-icon-wrap{
+    padding-left: 15rpx;
+    padding-top: 20rpx;
+}
+

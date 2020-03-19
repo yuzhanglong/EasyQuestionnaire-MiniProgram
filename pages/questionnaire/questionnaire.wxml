@@ -27,14 +27,12 @@
 
         <view class="problems-container-add-problem">
             <problem-card onlyShowTitle>
-                <view slot="card-title">
                     <view class="add-problem-message">
 
                         <view class="add-problem-message-text" bind:tap="readyAppendProblem">
                             + 添加一个问题
                         </view>
                     </view>
-                </view>
             </problem-card>
         </view>
     </view>

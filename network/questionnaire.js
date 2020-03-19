@@ -74,6 +74,41 @@ class QuestionnaireRequest {
     })
   }
 
+  static getOneProblem(pid, token) {
+    return request({
+      method: 'get',
+      url: 'questionnaires/get_problem/' + pid,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
+  //删除一道题目
+  static deleteOneProblem(pid, token) {
+    return request({
+      method: 'post',
+      url: 'questionnaires/delete_one_problem',
+      data: {
+        problemId: pid
+      },
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
+  static editOneProblem(problemInfo, token) {
+    return request({
+      method: 'post',
+      url: 'questionnaires/edit_one_problem',
+      data: problemInfo,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
 
 }
 

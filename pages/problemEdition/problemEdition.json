@@ -2,7 +2,9 @@
   "usingComponents": {
     "i-input": "/components/iViewUi/input/index",
     "i-button": "/components/iViewUi/button/index",
-    "problem-card": "../questionnaire/childCmp/problemCard/problemCard",
-    "i-icon": "/components/iViewUi/icon/index"
+    "i-icon": "/components/iViewUi/icon/index",
+    "i-modal": "/components/iViewUi/modal/index",
+    "option-card": "/pages/problemEdition/childCmp/optionCard/optionCard",
+    "base-card": "/components/baseCard/baseCard"
   }
 }

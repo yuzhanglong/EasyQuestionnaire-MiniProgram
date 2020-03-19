@@ -1,0 +1,27 @@
+.base-card {
+    background-color: white;
+    /* 和上方文字对齐*/
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+}
+
+
+.base-card-body {
+    flex: 1;
+}
+
+.base-card-tail {
+    padding-left: 4rpx;
+}
+
+.base-card-items {
+    display: flex;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.base-card-head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

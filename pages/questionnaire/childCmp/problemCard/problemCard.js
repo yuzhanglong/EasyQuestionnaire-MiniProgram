@@ -5,8 +5,15 @@ Component({
     onlyShowTitle: Boolean
   },
   data: {},
-  methods: {},
+  methods: {
+    gotoEditPrblem() {
+      let pid = this.properties.problem.problemId;
+      wx.navigateTo({
+        url: `/pages/problemEdition/problemEdition?pid=${pid}`
+      });
+    }
+  },
   options: {
     multipleSlots: true
-  }
+  },
 });

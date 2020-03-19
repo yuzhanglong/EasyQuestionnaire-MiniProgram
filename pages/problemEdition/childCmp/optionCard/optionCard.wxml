@@ -1,0 +1,24 @@
+<view class="option-card">
+    <base-card widthByVw="8">
+        <!-- 删除标记-->
+        <view slot="base-card-head">
+            <view class="option-head-icon-wrap" wx:if="{{!onlyShowTitle}}">
+                <i-icon type="offline"
+                        size="24"
+                        color="red">
+                </i-icon>
+            </view>
+        </view>
+
+        <!-- 选项标题-->
+        <view slot="base-card-body">
+            <view class="option-input-wrap" wx:if="{{!onlyShowTitle}}">
+                <i-input value="{{title}}"></i-input>
+            </view>
+            <slot></slot>
+        </view>
+
+        <view slot="base-card-tail">
+        </view>
+    </base-card>
+</view>

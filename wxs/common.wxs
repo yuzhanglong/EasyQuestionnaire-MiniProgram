@@ -10,6 +10,12 @@ function getProblemTypeChineseName(type) {
 
 }
 
+
+function isShowOptions(type) {
+  return type === 'SINGLE_SELECT' || type === 'MULTIPLY_SELECT' || type === 'DROP_DOWN';
+}
+
 module.exports = {
-  getProblemTypeChineseName: getProblemTypeChineseName
+  getProblemTypeChineseName: getProblemTypeChineseName,
+  isShowOptions: isShowOptions
 };
