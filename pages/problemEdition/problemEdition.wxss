@@ -42,3 +42,7 @@ page {
     width: 100vw;
     bottom: 0;
 }
+
+.problem-edition-head{
+    padding-bottom: 12vh;
+}

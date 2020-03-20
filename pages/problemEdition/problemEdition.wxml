@@ -1,71 +1,73 @@
 <view id="problem-edition">
     <wxs src="../../wxs/common.wxs" module="common"></wxs>
-    <view class="questionnaire-title">
-        标题
-    </view>
-
-    <view class="problem-title-container">
-        <i-input type="textarea"
-                 value="{{problem.title}}" bind:change="titleChange">
-        </i-input>
-    </view>
-
-    <view class="questionnaire-title"
-          wx:if="{{common.isShowOptions(problem.type)}}">
-        选项
-    </view>
-
-    <view class="options-container"wx:if="{{common.isShowOptions(problem.type)}}">
-        <option-card wx:for="{{problem.options}}"
-                     title="{{item.title}}" wx:key="index">
-        </option-card>
-    </view>
-
-    <option-card onlyShowTitle>
-        <view class="add-one-option-tag"
-              bind:tap="addOneOption"
-              wx:if="{{common.isShowOptions(problem.type)}}">
-            + 添加选项
+    <view class="problem-edition-head">
+        <view class="questionnaire-title">
+            标题
         </view>
-    </option-card>
 
-    <view class="questionnaire-title">设置</view>
+        <view class="problem-title-container">
+            <i-input type="textarea"
+                     value="{{problem.title}}" bind:change="titleChange">
+            </i-input>
+        </view>
+
+        <view class="questionnaire-title"
+              wx:if="{{common.isShowOptions(problem.type)}}">
+            选项
+        </view>
+
+        <view class="options-container" wx:if="{{common.isShowOptions(problem.type)}}">
+            <option-card wx:for="{{problem.options}}"
+                         title="{{item.title}}" wx:key="index">
+            </option-card>
+        </view>
+
+        <option-card onlyShowTitle>
+            <view class="add-one-option-tag"
+                  bind:tap="addOneOption"
+                  wx:if="{{common.isShowOptions(problem.type)}}">
+                + 添加选项
+            </view>
+        </option-card>
+
+        <view class="questionnaire-title">设置</view>
 
 
-    <view class="setting-container">
-        <base-card widthByVw="22" tailWidthByVw="18">
-            <view slot="base-card-head">
-                <view class="setting-text">
-                    设为必填项
+        <view class="setting-container">
+            <base-card widthByVw="22" tailWidthByVw="18">
+                <view slot="base-card-head">
+                    <view class="setting-text">
+                        设为必填项
+                    </view>
                 </view>
-            </view>
-            <view slot="base-card-tail">
-                <switch checked="{{problem.isRequire}}" bind:change="isRequireChange">
-                </switch>
-            </view>
-        </base-card>
-
-        <base-card widthByVw="26" tailWidthByVw="28">
-            <view slot="base-card-head">
-                <view class="setting-text">
-                    删除这道题目
+                <view slot="base-card-tail">
+                    <switch checked="{{problem.isRequire}}" bind:change="isRequireChange">
+                    </switch>
                 </view>
-            </view>
-            <view slot="base-card-body">
+            </base-card>
 
-            </view>
-            <view slot="base-card-tail">
-                <i-button inline type="error" size="small" bind:click="deleteProblem">
-                    点击删除
-                </i-button>
-            </view>
-        </base-card>
-    </view>
+            <base-card widthByVw="26" tailWidthByVw="28">
+                <view slot="base-card-head">
+                    <view class="setting-text">
+                        删除这道题目
+                    </view>
+                </view>
+                <view slot="base-card-body">
 
-    <view class="save-button-wrap">
-        <i-button type="primary" bind:click="saveProblemEdition">
-            保存上述设置
-        </i-button>
+                </view>
+                <view slot="base-card-tail">
+                    <i-button inline type="error" size="small" bind:click="deleteProblem">
+                        点击删除
+                    </i-button>
+                </view>
+            </base-card>
+        </view>
+
+        <view class="save-button-wrap">
+            <i-button type="primary" bind:click="saveProblemEdition">
+                保存上述设置
+            </i-button>
+        </view>
     </view>
 
     <i-modal title="删除确认"
