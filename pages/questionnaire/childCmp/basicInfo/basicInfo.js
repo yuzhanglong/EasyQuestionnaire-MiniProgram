@@ -2,7 +2,8 @@ Component({
   properties: {
     title: String,
     subTitle: String,
-    questionnaireId: Number
+    questionnaireId: Number,
+    showEditionButtion: Boolean
   },
   data: {},
   methods: {

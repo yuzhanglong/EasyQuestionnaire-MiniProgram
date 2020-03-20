@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "basic-info": "/pages/questionnaire/childCmp/basicInfo/basicInfo",
+    "i-message": "/components/iViewUi/message/index",
+    "i-input": "/components/iViewUi/input/index",
+    "i-button": "/components/iViewUi/button/index",
+    "complete-card": "childCmp/completeCard/completeCard",
+    "i-radio-group": "/components/iViewUi/radio-group/index",
+    "i-radio": "/components/iViewUi/radio/index",
+    "i-rate": "/components/iViewUi/rate/index"
+  }
+}

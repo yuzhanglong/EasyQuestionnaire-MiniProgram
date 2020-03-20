@@ -1,0 +1,43 @@
+page {
+    background-color: #F5F6FA
+}
+
+.complete-top-info {
+    padding-left: 30rpx;
+    padding-top: 40rpx;
+    color: #86878B;
+    font-size: 25rpx;
+    text-align: center;
+}
+
+.check-secret-input {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 30rpx;
+}
+
+
+.check-secret-button-wrap {
+    padding-top: 30rpx;
+}
+
+.basic-info-container {
+    padding-top: 30rpx;
+}
+
+.complete-card-items {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    padding-top: 30rpx;
+}
+
+.complete-card-items-single-select, .complete-card-items-multiply-select {
+    padding-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.complete-card-items-single-select-items, .complete-card-items-multiply-select-items {
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}

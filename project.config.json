@@ -66,23 +66,9 @@
 				},
 				{
 					"id": 1,
-					"name": "pages/questionnaire/questionnaire",
-					"pathName": "pages/questionnaire/questionnaire",
-					"query": "qid=15840024804897674",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "pages/basicInfoEdition/basicInfoEdition",
-					"pathName": "pages/basicInfoEdition/basicInfoEdition",
-					"query": "qid=15840024804897674&title=标题&subTitle=副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题副标题",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/problemEdition/problemEdition",
-					"pathName": "pages/problemEdition/problemEdition",
-					"query": "pid=15840024804827530",
+					"name": "pages/complete/complete",
+					"pathName": "pages/complete/complete",
+					"query": "qid=15840024747252362",
 					"scene": null
 				}
 			]

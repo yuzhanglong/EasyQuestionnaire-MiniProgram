@@ -1,0 +1,83 @@
+<view class="complete">
+    <i-message id="message"></i-message>
+
+    <view class="complete-top-info">
+        {{topInfo}}
+    </view>
+    <view class="check-secret-input" wx:if="{{showCheckSecretInput}}">
+        <i-input placeholder="请输入问卷密码" password bind:change="secretKeyInputChange">
+
+        </i-input>
+
+        <view class="check-secret-button-wrap">
+            <i-button type="primary" bind:click="checkSecretKey">点我验证</i-button>
+        </view>
+    </view>
+
+    <view class="complete-form-container" wx:if="{{showCompleteForm}}">
+        <view class="basic-info-container">
+            <basic-info title="{{basicInfo.title}}"
+                        subTitle="{{basicInfo.subTitle}}"
+                        questionnaireId="{{basicInfo.questionnaireId}}">
+            </basic-info>
+        </view>
+        <view class="complete-card-items">
+
+            <complete-card wx:for="{{problems}}"
+                           wx:for-index="problemIndex"
+                           wx:for-item="problemItem"
+                           wx:key="problemIndex"
+                           isRequired="{{problemItem.isRequire}}"
+                           title="{{problemItem.title}}"
+                           index="problemIndex"
+                           type="{{problemItem.type}}">
+
+                <radio-group wx:if="{{problemItem.type === 'SINGLE_SELECT'}}"
+                             bind:change="radioChange"
+                             data-problemType="{{problemItem.type}}"
+                             data-problemIndex="{{problemIndex}}"
+                             class="complete-card-items-single-select">
+
+                    <view wx:for="{{problemItem.options}}"
+                          wx:for-index="optionIndex"
+                          wx:for-item="optionItem"
+                          wx:key="options">
+
+                        <radio value="{{optionIndex}}"
+                               class="complete-card-items-single-select-items">
+                        </radio>
+                        <text>{{optionItem.title}}</text>
+                    </view>
+                </radio-group>
+
+
+                <checkbox-group wx:if="{{problemItem.type === 'MULTIPLY_SELECT'}}"
+                                data-problemIndex="{{problemIndex}}"
+                                data-problemType="{{problemItem.type}}"
+                                bind:change="radioChange"
+                                class="complete-card-items-multiply-select">
+
+                    <!-- 不要把text塞在checkbox里面 否则前面的选框会被挤压-->
+                    <view wx:for="{{problemItem.options}}"
+                          wx:for-index="optionIndex"
+                          wx:for-item="optionItem"
+                          wx:key="options">
+                        <checkbox value="{{optionIndex}}"
+                                  class="complete-card-items-multiply-select-items">
+                        </checkbox>
+                        <text>{{optionItem.title}}</text>
+                    </view>
+                </checkbox-group>
+
+
+                <i-rate wx:if="{{problemItem.type === 'SCORE'}}"
+                        bind:change="radioChange">
+                </i-rate>
+
+
+            </complete-card>
+        </view>
+    </view>
+
+
+</view>

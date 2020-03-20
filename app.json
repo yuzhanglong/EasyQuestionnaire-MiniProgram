@@ -5,7 +5,9 @@
     "pages/profile/profile",
     "pages/basicEdition/basicEdition",
     "pages/basicInfoEdition/basicInfoEdition",
-    "pages/problemEdition/problemEdition"
+    "pages/problemEdition/problemEdition",
+    "pages/problemEdition/childCmp/optionCard/optionCard",
+    "pages/complete/complete"
   ],
   "window": {
     "backgroundTextStyle": "light",

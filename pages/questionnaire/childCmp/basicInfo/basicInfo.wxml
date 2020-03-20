@@ -4,7 +4,7 @@
             <view class="basic-info-title">{{title}}</view>
             <view class="basic-info-subtitle">{{subTitle}}</view>
         </view>
-        <view class="edit-button-wrap">
+        <view class="edit-button-wrap" wx:if="{{showEditionButtion}}">
             <text bind:tap="gotoEditQuestionnaireBasicInfo">编辑</text>
         </view>
     </view>

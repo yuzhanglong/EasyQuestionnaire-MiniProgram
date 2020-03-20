@@ -1,0 +1,31 @@
+<view class="complete-card">
+    <wxs src="../../../../wxs/common.wxs" module="common"></wxs>
+    <view class="complete-card-wrap">
+        <!-- 问题标题部分 包括题号 问题标题 和是否必填的标记-->
+        <view class="complete-card-title">
+            <view class="complete-card-problem-tag">
+                <i-tag class="i-tags-1" name="problem-type"
+                       color="blue">
+                    {{common.getProblemTypeChineseName(type)}}
+                </i-tag>
+
+                <i-tag class="i-tags-2" name="red"
+                       color="yellow" wx:if="{{!isRequired}}">
+                    必填项
+                </i-tag>
+            </view>
+
+            <view class="complete-card-problem-title">
+                {{(index + 1) + '. ' + title}}
+            </view>
+        </view>
+
+        <view class="complete-card-body">
+            <!-- 此处插入问题表单-->
+            <slot></slot>
+        </view>
+    </view>
+
+
+
+</view>
