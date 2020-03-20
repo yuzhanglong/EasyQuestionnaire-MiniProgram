@@ -66,7 +66,7 @@ Page({
   },
 
   onShow() {
-    if (this.qid) this.getBasicInfo(this.data.qid);
+    this.getBasicInfo(this.data.qid);
   },
 
   getBasicInfo(qid) {
@@ -114,7 +114,7 @@ Page({
       type: problemType,
       title: `点我为这道${problemTypeChineseNameMap[problemType]}创建一个标题`,
       options: [],
-      targetQuestionnaireId: this.data.basicInfo.questionnaireId,
+      targetQuestionnaireId: this.data.qid,
       isRequire: false,
       problemId: null
     };

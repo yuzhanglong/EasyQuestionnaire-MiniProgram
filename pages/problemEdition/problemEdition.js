@@ -19,7 +19,8 @@ Page({
       }
     ]
   },
-  onLoad: function (options) {
+  onLoad(options) {
+    console.log(options);
     QuestionnaireRequest.getOneProblem(options.pid, app.globalData.token)
       .then(res => {
         let p = new ProblemModel(res.data);
