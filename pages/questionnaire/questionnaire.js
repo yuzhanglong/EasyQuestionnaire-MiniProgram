@@ -9,7 +9,7 @@ Page({
     basicInfo: {
       title: '问卷标题',
       subTitle: '请回答下面的几个问题 非常感谢',
-      questionnaireId: 15840024804897674
+      questionnaireId: null
     },
     problems: [],
     actionSheetVisible: false,
@@ -47,11 +47,26 @@ Page({
       this.setData({
         qid: query.qid
       });
+    } else {
+      this.createQuestionnaire();
     }
   },
 
+  createQuestionnaire() {
+    QuestionnaireRequest.createQuestionnaire(app.globalData.token)
+      .then(res => {
+        this.setData({
+          'basicInfo.questionnaireId': res.data.questionnaireId
+        })
+      })
+      .catch(err => {
+        //TODO:处理错误
+        console.log(err);
+      })
+  },
+
   onShow() {
-    this.getBasicInfo(this.data.qid);
+    if (this.qid) this.getBasicInfo(this.data.qid);
   },
 
   getBasicInfo(qid) {

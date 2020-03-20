@@ -6,13 +6,13 @@
     <view class="basic-info-container">
         <basic-info title="{{basicInfo.title}}"
                     subTitle="{{basicInfo.subTitle}}"
-                    questionnaireId="{{basicInfo.questionnaireId}}">
+                    questionnaireId="{{basicInfo.questionnaireId}}"
+                    showEditionButtion>
         </basic-info>
     </view>
 
     <view class="questionnaire-title">问题</view>
     <view class="problems-container">
-
 
         <view class="problems-container-items" wx:for="{{problems}}" wx:key="index">
             <problem-card problem="{{item}}"
@@ -27,12 +27,12 @@
 
         <view class="problems-container-add-problem">
             <problem-card onlyShowTitle>
-                    <view class="add-problem-message">
+                <view class="add-problem-message">
 
-                        <view class="add-problem-message-text" bind:tap="readyAppendProblem">
-                            + 添加一个问题
-                        </view>
+                    <view class="add-problem-message-text" bind:tap="readyAppendProblem">
+                        + 添加一个问题
                     </view>
+                </view>
             </problem-card>
         </view>
     </view>
@@ -46,6 +46,4 @@
             <text>请选择你要添加题目的类型</text>
         </view>
     </i-action-sheet>
-
-
 </view>

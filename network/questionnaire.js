@@ -14,6 +14,17 @@ class QuestionnaireRequest {
     });
   }
 
+  //新建问卷
+  static createQuestionnaire(token) {
+    return request({
+      method: 'get',
+      url: 'questionnaires/create',
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
+
 
   static deleteQuestionnaire(qid, token) {
     return request({
