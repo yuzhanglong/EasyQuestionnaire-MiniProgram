@@ -41,3 +41,16 @@ page {
     padding-top: 10rpx;
     padding-bottom: 10rpx;
 }
+
+.save-button-wrap {
+    height: 10vh;
+    padding-top: 10rpx;
+    background-color: white;
+    position: fixed;
+    text-align: center;
+    width: 100vw;
+    bottom: 0;
+}
+.complete-form-container{
+    padding-bottom: 13vh;
+}

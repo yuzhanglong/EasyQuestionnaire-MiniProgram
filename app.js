@@ -9,7 +9,7 @@ App({
     token: '',
     isLogin: false
   },
-  onLaunch: function () {
+  onLaunch() {
     const token = wx.getStorageSync(TOKEN);
     if (token) {
       this.checkToken(token);

@@ -7,7 +7,8 @@
     "pages/basicInfoEdition/basicInfoEdition",
     "pages/problemEdition/problemEdition",
     "pages/problemEdition/childCmp/optionCard/optionCard",
-    "pages/complete/complete"
+    "pages/complete/complete",
+    "pages/success/success"
   ],
   "window": {
     "backgroundTextStyle": "light",

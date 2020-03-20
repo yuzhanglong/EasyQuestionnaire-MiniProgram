@@ -74,7 +74,7 @@ Page({
     for (let i = 0; i < problems.length; i++) {
       res.push({
         targetProblemId: problems[i].problemId,
-        resolution: [],
+        resolution: [0],
         type: problems[i].type
       });
     }
@@ -83,7 +83,85 @@ Page({
     })
   },
 
-  radioChange(e){
-    console.log(e);
-  }
+  formDataChange(event) {
+    console.log(event);
+    // 目标问题下标
+    let problemIndex = event.currentTarget.dataset.problemindex;
+
+    // 目标问题类型下标
+    let problemType = event.currentTarget.dataset.problemtype;
+
+    // 表单  单选题或多选题 || 评价题 || 填空题
+    let newForm = event.detail.value || event.detail.index || event.detail.detail.value;
+
+    // 取出目标问题
+    let targetProblem = this.data.problemResults[problemIndex];
+
+    // 开始更新表单
+    if (problemType === "SINGLE_SELECT") {
+      targetProblem.resolution[0] = newForm
+    }
+    if (problemType === "MULTIPLY_SELECT") {
+      targetProblem.resolution = newForm
+    }
+    if (problemType === "SCORE") {
+      targetProblem.resolution[0] = newForm
+    }
+    if (problemType === "BLANK_FILL") {
+      targetProblem.resolution[0] = newForm
+    }
+
+    let p = 'problemResults[' + problemIndex + ']';
+    this.setData({
+      [p]: targetProblem
+    })
+  },
+
+  saveCompleteForm() {
+    if (!this.checkIsComplete()) {
+      MessageBox.handleWarning({
+        message: "请完成所有必填项 O(∩_∩)O"
+      });
+      return
+    }
+
+    if (this.checkIsSubmit() && this.basicInfo.equipmentControl) {
+      MessageBox.handleWarning({
+        message: "每个用户只能填写一次 请不要重复填写"
+      });
+      return
+    }
+
+    CompleteRequest.submitComplete(this.data.problemResults, this.data.qid)
+      .then(() => {
+        wx.redirectTo({
+          url: "/pages/success/success"
+        })
+
+      })
+      .catch(() => {
+        MessageBox.handleError({
+          message: "抱歉 提交失败"
+        });
+      })
+  },
+
+
+  checkIsComplete() {
+    for (let i = 0; i < this.data.problems.length; i++) {
+      if (this.data.problems[i].isRequire && !this.problemResults[i].resolution.length) {
+        return false;
+      }
+    }
+    return true;
+  },
+
+  checkIsSubmit() {
+    let data = wx.getStorageSync(this.data.qid);
+    return !!(data && data.length);
+  },
+
+  setIsSubmit() {
+    wx.setStorageSync(this.data.qid, this.data.qid);
+  },
 });

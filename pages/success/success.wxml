@@ -1,0 +1,16 @@
+<view class="success">
+    <view class="success-title">
+        <view>提交成功啦~感谢您的参与 Thanks♪(･ω･)ﾉ</view>
+
+        <button type="primary"
+                class="back-button"
+                bind:tap="gotoHome">
+            点我返回首页
+        </button>
+
+        <view class="github-img-wrap">
+            <image src="/assets/image/GitHub.png" mode="widthFix" class="github-img"/>
+            <view class="github-img-text">coderyzl</view>
+        </view>
+    </view>
+</view>

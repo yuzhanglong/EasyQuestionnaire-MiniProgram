@@ -28,7 +28,6 @@ Page({
         name: '删除'
       },
     ]
-
   },
   onShow() {
     if (!app.globalData.isLogin) {

@@ -4,8 +4,11 @@
     <view class="complete-top-info">
         {{topInfo}}
     </view>
+
     <view class="check-secret-input" wx:if="{{showCheckSecretInput}}">
-        <i-input placeholder="请输入问卷密码" password bind:change="secretKeyInputChange">
+        <i-input placeholder="请输入问卷密码"
+                 password
+                 bind:change="secretKeyInputChange">
 
         </i-input>
 
@@ -29,11 +32,11 @@
                            wx:key="problemIndex"
                            isRequired="{{problemItem.isRequire}}"
                            title="{{problemItem.title}}"
-                           index="problemIndex"
+                           index="{{problemIndex}}"
                            type="{{problemItem.type}}">
 
                 <radio-group wx:if="{{problemItem.type === 'SINGLE_SELECT'}}"
-                             bind:change="radioChange"
+                             bind:change="formDataChange"
                              data-problemType="{{problemItem.type}}"
                              data-problemIndex="{{problemIndex}}"
                              class="complete-card-items-single-select">
@@ -54,7 +57,7 @@
                 <checkbox-group wx:if="{{problemItem.type === 'MULTIPLY_SELECT'}}"
                                 data-problemIndex="{{problemIndex}}"
                                 data-problemType="{{problemItem.type}}"
-                                bind:change="radioChange"
+                                bind:change="formDataChange"
                                 class="complete-card-items-multiply-select">
 
                     <!-- 不要把text塞在checkbox里面 否则前面的选框会被挤压-->
@@ -67,17 +70,31 @@
                         </checkbox>
                         <text>{{optionItem.title}}</text>
                     </view>
+
                 </checkbox-group>
 
 
                 <i-rate wx:if="{{problemItem.type === 'SCORE'}}"
-                        bind:change="radioChange">
+                        data-problemIndex="{{problemIndex}}"
+                        data-problemType="{{problemItem.type}}"
+                        bind:change="formDataChange"
+                        value="{{problemResults[problemIndex].resolution[0]}}">
                 </i-rate>
 
+                <i-input wx:if="{{problemItem.type === 'BLANK_FILL'}}"
+                         data-problemIndex="{{problemIndex}}"
+                         data-problemType="{{problemItem.type}}"
+                         placeholder="请在这里填写答案"
+                         class="blank-fill-input"
+                         bind:change="formDataChange">
+                </i-input>
 
             </complete-card>
         </view>
     </view>
-
-
+    <view class="save-button-wrap">
+        <i-button type="primary" bind:click="saveCompleteForm">
+            保存上述设置
+        </i-button>
+    </view>
 </view>
