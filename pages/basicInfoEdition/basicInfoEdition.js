@@ -1,5 +1,6 @@
 import {QuestionnaireRequest} from "../../network/questionnaire";
 import {MessageBox} from "../../utils/messageBox";
+import {ResponseModel} from "../../models/ResponseModel";
 
 const app = getApp();
 
@@ -29,11 +30,12 @@ Page({
       .then(() => {
         wx.navigateBack();
       })
-      .catch(() => {
+      .catch(err => {
+        let response = new ResponseModel(err.data);
         MessageBox.handleError({
-          message: "抱歉 编辑失败"
-        });
-      })
+          message: response.information
+        })
+      });
   },
 
   subTitleChange(event) {

@@ -1,9 +1,9 @@
 class ResponseModel {
   constructor(json) {
-    if (json['errorCode']) {
+    if ('errorCode' in json) {
       this.errorCode = json['errorCode'];
     }
-    if (json['information']) {
+    if (json['information'] !== undefined) {
       this.information = json['information'];
     }
   }

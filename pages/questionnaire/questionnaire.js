@@ -62,7 +62,7 @@ Page({
       })
       .catch(() => {
         MessageBox.handleError({
-          message: "抱歉 问卷数据获取失败"
+          message: "抱歉 问卷创建失败 3秒后自动返回"
         });
         setTimeout(() => {
           wx.navigateBack();
@@ -85,7 +85,7 @@ Page({
       })
       .catch(() => {
         MessageBox.handleError({
-          message: "抱歉 问卷数据获取失败"
+          message: "抱歉 问卷数据获取失败 3秒后自动返回"
         });
         setTimeout(() => {
           wx.navigateBack();

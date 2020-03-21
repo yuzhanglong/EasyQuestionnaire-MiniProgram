@@ -27,7 +27,7 @@ Page({
       .catch(err => {
         let response = new ResponseModel(err.data);
         MessageBox.handleError({
-          message: response.information
+          message: response.information || "抱歉 获取失败"
         })
       });
   },
@@ -75,7 +75,7 @@ Page({
       .catch(err => {
         let response = new ResponseModel(err.data);
         MessageBox.handleError({
-          message: response.information
+          message: response.information || "抱歉 编辑失败"
         })
       })
   }

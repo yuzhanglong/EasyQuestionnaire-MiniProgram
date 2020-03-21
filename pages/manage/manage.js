@@ -47,6 +47,11 @@ Page({
           questionnaires: res.data.questionnaires
         });
       })
+      .catch(() => {
+        MessageBox.handleError({
+          message: "抱歉 登录失败"
+        });
+      })
   },
 
   reLaunchManagePage() {
@@ -141,7 +146,7 @@ Page({
       })
       .catch(res => {
         let response = new ResponseModel(res.data);
-        MessageBox.handleSuccess({
+        MessageBox.handleError({
           message: response.information
         });
       });
