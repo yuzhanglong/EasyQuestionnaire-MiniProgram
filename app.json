@@ -8,7 +8,8 @@
     "pages/problemEdition/problemEdition",
     "pages/problemEdition/childCmp/optionCard/optionCard",
     "pages/complete/complete",
-    "pages/success/success"
+    "pages/success/success",
+    "pages/analysis/analysis"
   ],
   "window": {
     "backgroundTextStyle": "light",

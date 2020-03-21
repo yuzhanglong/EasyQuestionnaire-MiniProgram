@@ -1,0 +1,34 @@
+<view class="analysis">
+    <wxs src="../../wxs/common.wxs" module="common"></wxs>
+    <basic-info title="{{basicInfo.title}}"
+                subTitle="{{'当前收集到的问卷数目:' + basicInfo.totalComplete}}"
+                showEditionButtion="{{false}}">
+    </basic-info>
+
+
+    <view class="resolution-container">
+        <view class="resolution-items" wx:for="{{resolutions}}" wx:key="item">
+            <!--            <pie-chart chartData="{{common.getDataDict(item.resolution)}}">-->
+            <!--            </pie-chart>-->
+            <view class="resolution-items-title">{{item.title}}</view>
+            <my-table wx:if="{{item.type === 'SINGLE_SELECT' || item.type === 'MULTIPLY_SELECT'}}"
+                      column="{{tableColumn}}"
+                      row="{{item.resolution}}" showTable>
+            </my-table>
+
+            <my-table wx:if="{{item.type === 'SCORE'}}"
+                      column="{{tableColumnForScore}}"
+                      row="{{item.resolution}}" showTable>
+            </my-table>
+
+            <my-table wx:if="{{item.type === 'BLANK_FILL'}}"
+                      showTable="{{false}}">
+            </my-table>
+        </view>
+    </view>
+    <view class="bottom-message">
+        <i-load-more tip="感谢你使用EasyQuestionnaire"
+                     loading="{{ false }}"/>
+    </view>
+
+</view>

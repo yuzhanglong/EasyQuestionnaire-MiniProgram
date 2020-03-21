@@ -122,7 +122,9 @@ Page({
 
   // 数据分析
   gotoAnalysis() {
-    console.log('shujufenxi');
+    wx.navigateTo({
+      url: `/pages/analysis/analysis?qid=${this.data.activeQuestionnaire.questionnaireId}`
+    })
   },
 
   // 删除

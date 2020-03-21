@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "basic-info": "/pages/questionnaire/childCmp/basicInfo/basicInfo",
+    "basic-info": "/components/basicInfo/basicInfo",
     "i-message": "/components/iViewUi/message/index",
     "i-input": "/components/iViewUi/input/index",
     "i-button": "/components/iViewUi/button/index",

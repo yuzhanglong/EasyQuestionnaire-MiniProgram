@@ -1,0 +1,30 @@
+<view class="table">
+    <!-- 绘制表头 用来展示的是item的data-->
+    <view class="table-head" wx:if="{{showTable}}">
+        <view class="table-head-item"
+              wx:for="{{column}}" wx:key="index" style="width:{{item.width}}px;">
+            {{item.data}}
+        </view>
+
+    </view>
+    <view wx:if="{{!showTable}}" class="can-not-show-table">抱歉 这道题的数据无法用表格呈现</view>
+
+    <!-- 表格内容-->
+    <view wx:for="{{row}}"
+          class="table-row{{index % 2 ? '-emphasis' : ''}}"
+          wx:for-item="rowItem"
+          wx:key="index"
+          wx:if="{{showTable}}">
+
+        <view class="table-column">
+            <view class="table-column-item"
+                  wx:for="{{column}}"
+                  wx:for-item="columnItem"
+                  style="width:{{columnItem.width}}px;"
+                  wx:key="index">
+                {{rowItem[columnItem.name] || columnItem.default}}
+            </view>
+        </view>
+    </view>
+
+</view>

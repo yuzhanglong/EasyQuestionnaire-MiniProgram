@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "pie-chart": "/components/charts/pieChart/pieChart",
+    "basic-info": "/components/basicInfo/basicInfo",
+    "my-table": "/components/my-table/my-table",
+    "i-load-more": "/components/iViewUi/load-more/index"
+  }
+}

@@ -1,0 +1,15 @@
+.resolution-items{
+    justify-content: center;
+    padding-left: 5vw;
+    padding-top: 40px;
+    width: 90vw;
+}
+
+.resolution-items-title{
+    font-size: 28rpx;
+    padding-bottom: 20rpx;
+}
+
+.bottom-message{
+    padding-top: 50px;
+}

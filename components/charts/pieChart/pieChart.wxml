@@ -1,0 +1,5 @@
+<view class="pie-chart">
+    <ec-canvas canvas-id="mychart-pie"
+               ec="{{ ec }}" class="mychart-dom-bar">
+    </ec-canvas>
+</view>

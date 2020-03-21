@@ -5,7 +5,7 @@
 	},
 	"setting": {
 		"urlCheck": true,
-		"es6": false,
+		"es6": true,
 		"enhance": true,
 		"postcss": true,
 		"minified": true,
@@ -76,6 +76,13 @@
 					"name": "pages/success/success",
 					"pathName": "pages/success/success",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/analysis/analysis",
+					"pathName": "pages/analysis/analysis",
+					"query": "qid=15840024747252362",
 					"scene": null
 				}
 			]

@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "basic-info": "childCmp/basicInfo/basicInfo",
+    "basic-info": "../../components/basicInfo/basicInfo",
     "problem-card": "childCmp/problemCard/problemCard",
     "i-icon": "/components/iViewUi/icon/index",
     "i-action-sheet": "/components/iViewUi/action-sheet/index",

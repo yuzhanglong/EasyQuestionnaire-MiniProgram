@@ -7,7 +7,19 @@ function getProblemTypeChineseName(type) {
     "SCORE": "评价题"
   };
   return problemTypeChineseNameMap[type];
+}
 
+// 适配饼图
+function getDataDict(resolutions) {
+  var list = [];
+  for (var i = 0; i < resolutions.length; i++) {
+    if (!resolutions[i].resolution) continue;
+    list.push({
+      value: resolutions[i].resolution,
+      name: resolutions[i].title
+    })
+  }
+  return list
 }
 
 
@@ -17,5 +29,6 @@ function isShowOptions(type) {
 
 module.exports = {
   getProblemTypeChineseName: getProblemTypeChineseName,
-  isShowOptions: isShowOptions
+  isShowOptions: isShowOptions,
+  getDataDict: getDataDict
 };
