@@ -1,5 +1,6 @@
 import {QuestionnaireRequest} from "../../network/questionnaire";
 import {ProblemModel} from "../../models/problemModel";
+import {MessageBox} from "../../utils/messageBox";
 
 const app = getApp();
 
@@ -28,8 +29,13 @@ Page({
           problem: p
         })
       })
-      .catch(err => {
-        //TODO 错误处理
+      .catch(() => {
+        MessageBox.handleError({
+          message: "抱歉 问题数据获取失败 三秒后将返回"
+        });
+        setTimeout(() => {
+          wx.navigateBack();
+        }, 3000)
       })
   },
   titleChange(event) {

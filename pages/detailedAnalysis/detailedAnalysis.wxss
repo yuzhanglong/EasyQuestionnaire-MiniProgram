@@ -1,0 +1,16 @@
+.problem-title {
+    padding-top: 2vh;
+    text-align: center;
+}
+
+.table-wrap{
+    padding-top: 30px;
+    width: 90vw;
+    padding-left: 5vw;
+}
+
+.blank-fill-message{
+    font-size: 28rpx;
+    padding-bottom: 20px;
+    color: #C0C0C0;
+}

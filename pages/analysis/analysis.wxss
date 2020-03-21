@@ -13,3 +13,7 @@
 .bottom-message{
     padding-top: 50px;
 }
+
+.show-detail-text{
+    color: #51B7CA;
+}

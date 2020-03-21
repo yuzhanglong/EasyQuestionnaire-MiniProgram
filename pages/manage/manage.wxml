@@ -1,4 +1,4 @@
-<view>
+<view class="manage">
     <i-message id="message"></i-message>
 
     <i-modal visible="{{ confirmSpreadVisiable }}"
@@ -10,8 +10,7 @@
     <view id="manage">
         <top-bar>
             <view slot="top-bar-left">
-                <i-button bind:click="menuButtonClick"
-                          inline
+                <i-button inline
                           size="large"
                           long class="menu-icon-button">
                     <i-icon type="other" size="32" color="#80848f"></i-icon>
@@ -25,7 +24,9 @@
                   bind:tap="itemClick"
                   data-qid="{{item.questionnaireId}}"
                   data-index="{{index}}">
-                <item-card title="{{item.title}}" condition="{{item.condition}}"></item-card>
+                <item-card title="{{item.title}}"
+                           condition="{{item.condition}}">
+                </item-card>
             </view>
         </view>
     </view>
@@ -34,12 +35,14 @@
                     actions="{{questionnaireOperation}}"
                     show-cancel
                     bind:click="handleClickItem"
-                    bind:cancel="actionSheetCancel" class="action-sheet-in-manage">
+                    bind:cancel="actionSheetCancel"
+                    class="action-sheet-in-manage">
         <view slot="header" style="padding: 16px">
             <view style="color: #444;font-size: 16px"></view>
             <text>{{activeQuestionnaire.title}}</text>
         </view>
     </i-action-sheet>
+    <bottom-message></bottom-message>
 
     <better-tab-bar current="manage"></better-tab-bar>
 </view>

@@ -56,17 +56,22 @@ Page({
     QuestionnaireRequest.createQuestionnaire(app.globalData.token)
       .then(res => {
         this.setData({
-          'basicInfo.questionnaireId': res.data.questionnaireId
+          'basicInfo.questionnaireId': res.data.questionnaireId,
+          qid: res.data.questionnaireId
         })
       })
-      .catch(err => {
-        //TODO:处理错误
-        console.log(err);
+      .catch(() => {
+        MessageBox.handleError({
+          message: "抱歉 问卷数据获取失败"
+        });
+        setTimeout(() => {
+          wx.navigateBack();
+        }, 3000)
       })
   },
 
   onShow() {
-    this.getBasicInfo(this.data.qid);
+    if (this.data.qid) this.getBasicInfo(this.data.qid);
   },
 
   getBasicInfo(qid) {
@@ -77,10 +82,15 @@ Page({
           basicInfo: q.basicInfo,
           problems: q.problems
         });
-      }).catch(err => {
-      //TODO:处理错误
-      console.log(err);
-    })
+      })
+      .catch(() => {
+        MessageBox.handleError({
+          message: "抱歉 问卷数据获取失败"
+        });
+        setTimeout(() => {
+          wx.navigateBack();
+        }, 3000)
+      })
   },
 
   // 添加一个问题
@@ -90,6 +100,7 @@ Page({
       actionSheetVisible: true
     });
   },
+
   handleClickItem(event) {
     let problemTypeArr = ["SINGLE_SELECT", "MULTIPLY_SELECT", "BLANK_FILL", "DROP_DOWN", "SCORE"];
     let type = problemTypeArr[event.detail.index];

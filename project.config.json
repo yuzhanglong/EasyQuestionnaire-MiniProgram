@@ -84,6 +84,13 @@
 					"pathName": "pages/analysis/analysis",
 					"query": "qid=15840024747252362",
 					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "pages/detailAnalysis/detailedAnalysis",
+					"pathName": "pages/detailedAnalysis/detailedAnalysis",
+					"query": "pid=15840024764976294",
+					"scene": null
 				}
 			]
 		}

@@ -11,6 +11,17 @@ class AnalysisRequest {
       }
     })
   }
+
+
+  static getProblemAnalysisData(pid, token) {
+    return request({
+      method: 'get',
+      url: 'analysis/problem/' + pid,
+      header: {
+        "authorization": "Basic " + base64.encode(`${token}:`)
+      }
+    })
+  }
 }
 
 export {

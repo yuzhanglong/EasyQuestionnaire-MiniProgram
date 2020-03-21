@@ -1,4 +1,5 @@
 <view class="analysis">
+    <i-message id="message"></i-message>
     <wxs src="../../wxs/common.wxs" module="common"></wxs>
     <basic-info title="{{basicInfo.title}}"
                 subTitle="{{'当前收集到的问卷数目:' + basicInfo.totalComplete}}"
@@ -8,9 +9,13 @@
 
     <view class="resolution-container">
         <view class="resolution-items" wx:for="{{resolutions}}" wx:key="item">
-            <!--            <pie-chart chartData="{{common.getDataDict(item.resolution)}}">-->
-            <!--            </pie-chart>-->
-            <view class="resolution-items-title">{{item.title}}</view>
+            <view class="resolution-items-title">{{item.title}}
+                <text decode class="show-detail-text"
+                      bind:tap="gotoDetailedAnalysis"
+                      wx:if="{{item.type === 'BLANK_FILL'}}"
+                      data-problemId="{{item.problemId}}">&nbsp;&nbsp;&nbsp;&nbsp;查看详细
+                </text>
+            </view>
             <my-table wx:if="{{item.type === 'SINGLE_SELECT' || item.type === 'MULTIPLY_SELECT'}}"
                       column="{{tableColumn}}"
                       row="{{item.resolution}}" showTable>
@@ -26,9 +31,5 @@
             </my-table>
         </view>
     </view>
-    <view class="bottom-message">
-        <i-load-more tip="感谢你使用EasyQuestionnaire"
-                     loading="{{ false }}"/>
-    </view>
-
+    <bottom-message></bottom-message>
 </view>

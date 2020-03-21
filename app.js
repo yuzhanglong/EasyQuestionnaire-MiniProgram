@@ -7,7 +7,8 @@ App({
   globalData: {
     userInfo: null,
     token: '',
-    isLogin: false
+    isLogin: false,
+    initSuccess: true
   },
   onLaunch() {
     const token = wx.getStorageSync(TOKEN);
@@ -45,9 +46,8 @@ App({
             if (this.userInfoReadyCallback) {
               this.userInfoReadyCallback(res.data.token);
             }
-          }).catch(err => {
-          //TODO:网络错误处理
-          console.log(err);
+          }).catch(() => {
+          this.globalData.initSuccess = false;
         });
       }
     });

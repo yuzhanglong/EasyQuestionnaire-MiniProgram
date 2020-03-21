@@ -1,0 +1,15 @@
+<view class="detail-analysis">
+    <view class="problem-title">
+        {{resolution.title}}
+    </view>
+
+    <view class="table-wrap">
+        <view class="blank-fill-message">
+            {{publishedResolution.length ? '*未填写这道题目的人会被自动过滤' : '这道题暂时没有人填写'}}
+        </view>
+        <my-table column="{{tableColumnForBlankFill}}"
+                  row="{{publishedResolution}}"
+                  showTable>
+        </my-table>
+    </view>
+</view>

@@ -9,7 +9,8 @@
     "pages/problemEdition/childCmp/optionCard/optionCard",
     "pages/complete/complete",
     "pages/success/success",
-    "pages/analysis/analysis"
+    "pages/analysis/analysis",
+    "pages/detailedAnalysis/detailedAnalysis"
   ],
   "window": {
     "backgroundTextStyle": "light",

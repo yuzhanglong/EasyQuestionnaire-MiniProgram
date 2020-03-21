@@ -4,6 +4,7 @@
     width: 90vw;
     background-color: white;
     display: flex;
+    align-items: center;
 }
 
 .item-card-condition-mark-tag {
@@ -12,7 +13,6 @@
 
 .item-card-condition-mark {
     padding-left: 20rpx;
-    padding-top: 25rpx;
     width: 30rpx;
 }
 
@@ -20,7 +20,6 @@
     padding-left: 80rpx;
     flex: 1;
     font-size: 26rpx;
-    line-height: 100rpx;
 }
 
 .item-card-tail {

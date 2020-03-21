@@ -7,7 +7,9 @@
         </view>
 
     </view>
-    <view wx:if="{{!showTable}}" class="can-not-show-table">抱歉 这道题的数据无法用表格呈现</view>
+    <view wx:if="{{!showTable}}" class="can-not-show-table">
+        抱歉 这道题的数据无法用表格呈现 请查看详细
+    </view>
 
     <!-- 表格内容-->
     <view wx:for="{{row}}"

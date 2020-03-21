@@ -1,0 +1,5 @@
+<view class="bottom-message">
+    <i-load-more tip="{{message}}"
+                 loading="{{ false }}">
+    </i-load-more>
+</view>

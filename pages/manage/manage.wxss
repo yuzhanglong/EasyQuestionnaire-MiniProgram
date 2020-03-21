@@ -2,11 +2,6 @@ page {
     background-color: #F5F6FA
 }
 
-.menu-icon-wrap {
-
-}
-
-
 
 .menu-icon-button {
     color: white;
@@ -26,4 +21,9 @@ page {
 
 .action-sheet-in-manage {
     background-color: white;
+}
+
+
+.manage {
+    padding-bottom: 5vh;
 }

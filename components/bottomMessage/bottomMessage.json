@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "i-load-more": "/components/iViewUi/load-more/index"
+  }
+}
