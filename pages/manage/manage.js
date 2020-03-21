@@ -16,6 +16,10 @@ Page({
         name: '发布'
       },
       {
+        name: '分享',
+        openType: 'share'
+      },
+      {
         name: '编辑基本信息'
       },
       {
@@ -80,15 +84,18 @@ Page({
         this.gotoSpread();
         break;
       case 1:
-        this.gotoEditBasicInfo();
+        this.gotoShare();
         break;
       case 2:
-        this.gotoEditProblems();
+        this.gotoEditBasicInfo();
         break;
       case 3:
-        this.gotoAnalysis();
+        this.gotoEditProblems();
         break;
       case 4:
+        this.gotoAnalysis();
+        break;
+      case 5:
         this.gotoDelete();
         break;
     }
@@ -186,5 +193,17 @@ Page({
     wx.navigateTo({
       url: "/pages/questionnaire/questionnaire?type=new"
     })
+  },
+
+  gotoShare() {
+
+  },
+
+  onShareAppMessage() {
+    return {
+      title: `问卷调查:${this.data.activeQuestionnaire.title}`,
+      path: `/pages/complete/complete?qid=${this.data.activeQuestionnaire.questionnaireId}`,
+      imageUrl: '../../assets/image/shareImg.jpg'
+    }
   }
 });
